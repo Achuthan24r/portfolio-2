@@ -1,0 +1,122 @@
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1a2a6c;
+  text-decoration: none;
+  position: relative;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.navbar-logo:hover {
+  color: #b21f1f;
+}
+
+.navbar-logo::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #1a2a6c, #b21f1f);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  color: #1a2a6c;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  background: transparent;
+  border: 2px solid transparent;
+}
+
+.nav-link:hover {
+  color: #b21f1f;
+  background: rgba(26, 42, 108, 0.05);
+  border-color: #1a2a6c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 42, 108, 0.1);
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #1a2a6c, #b21f1f);
+  border-radius: 6px;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.nav-link:hover::before {
+  opacity: 0.1;
+}
+
+/* Active link style */
+.nav-link.active {
+  color: #b21f1f;
+  background: rgba(26, 42, 108, 0.1);
+  border-color: #1a2a6c;
+  box-shadow: 0 4px 12px rgba(26, 42, 108, 0.1);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 1rem;
+  }
+
+  .nav-menu {
+    gap: 0.5rem;
+  }
+
+  .nav-link {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
